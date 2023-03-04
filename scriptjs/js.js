@@ -46,10 +46,7 @@ $("form").submit(function (event) {
           Object.values(countryData.currencies)
             .map((c) => c.name)
             .join(", ") || "";
-        var languages =
-          Object.values(countryData.languages)
-            .map((l) => l.name)
-            .join(", ") || "";
+        var languagess = Object.keys(countryData.languages)[0];
         var translations =
           countryData.translations && countryData.translations.fr
             ? Object.values(countryData.translations.fr).join(", ")
@@ -81,7 +78,7 @@ $("form").submit(function (event) {
         $("#borders").html(borders);
         $("#population").html(population);
         $("#currencies").html(currencies);
-        $("#languages").html(languages);
+        $("#languages").html(countryData.languages[languagess]);
         $("#flag").html(flag);
         $("#timezone").html(timezone);
         $("#altSpellings").html(altSpellings);
@@ -99,9 +96,9 @@ $("form").submit(function (event) {
       },
       error: function () {
         // Handle error cases and toggling containers
+        $("#err").css("display", "block");
         $("#names").html(countryName);
         $("#err").removeClass("hidden");
-        $("#err").css("display", "block");
         $("#result").css("display", "none");
       },
     });
