@@ -32,9 +32,14 @@ $("form").submit(function (event) {
         var timezone = countryData.timezones?.join(", ") || "";
         var borders = countryData.borders?.join(", ") || "";
         var maps = countryData.maps.googleMaps || ";";
-        var nativeName = countryData.name.nativeName || "";
+        var nativeName =
+          Object.values(countryData.name.nativeName)[0].common || ",";
         var independent = countryData.independent || "";
-        console.log(typeof nativeName);
+        var gini = Object.keys(countryData.gini)[0].concat(
+          " : ",
+          Object.values(countryData.gini)
+        );
+        console.log(gini);
         // console.log(countryData.name.nativeName?.[0])
         var numericCode =
           countryData.idd.root.concat(countryData.idd.suffixes[0]) || "";
@@ -93,6 +98,10 @@ $("form").submit(function (event) {
         $("#cioc").html(cioc);
         $("#maps").html(maps);
         $("#independent").html(independent);
+        $("#gini").html(gini);
+        () => {
+          document.getElementById("link").addEventListener("click", () => {});
+        };
       },
       error: function () {
         // Handle error cases and toggling containers
