@@ -19,12 +19,12 @@
           <a href="/">Atlas viewer</a>
         </h1>
         <ul
-          class="w-1/5 flex justify-between p-5 font-mono text-white max-sm:hidden"
+          class="w-1/5 flex justify-between p-5 font-mono text-white max-sm:hidden sm:hidden lg:flex"
         >
           <li class="underline"><a href="#">Documentation</a></li>
           <li class="underline"><a href="#">About</a></li>
         </ul>
-        <ul class="w-10 h-10 hidden  flex-col float-right mr-5">
+        <ul class="w-10 h-10 hidden   flex-col float-right mr-5">
           <li>
             <span class="w-full border-2 border-black "></span>
           </li>
@@ -42,17 +42,16 @@
     <main class="w-full flex flex-col justify-between mt-5 items-center">
       <!-- The main section of the page. -->
 
-      <section class="max-sm:w-full w-3/6 mx-auto mt-5">
-        <form id ="cs" class="w-full opacity-0 flex max-sm:flex-col  justify-around items-center">
-        <label for="countryName" class="text-blue-900 p-5 mt-1 font-mono"
-          >Saisissez le nom du pays</label
+      <section class="max-sm:w-full   lg:w-3/6 mx-auto mt-5">
+        <form id ="cs" class="w-full opacity-0 flex max-sm:flex-col   justify-around items-center">
+        <label for="countryName" class="text-blue-900 p-5 mt-1 font-mono">Saisissez le nom du pays</label
         >
           <input
             id="country"
             required
             type="text"
             placeholder="Haiti"
-            class="w-2/5 border p-2 rounded-md focus:border-blue-900 font-mono"
+            class="w-2/5 border md:mr-2 md:flex-grow-0 md:flex-shrink-0 p-2 rounded-md focus:border-blue-900 font-mono"
           />
           <button
             type="submit"
